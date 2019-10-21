@@ -1,0 +1,35 @@
+\documentclass[DIN,
+fromalign=right,
+fromphone=false,
+version=last,
+parskip=full,paper=a4]{scrlttr2}
+
+\setkomavar{fromname}{$from.name$}
+\setkomavar{fromaddress}{$from.address.street$\\$from.address.code$ $from.address.place$}
+\setkomavar{place}{$from.address.place$}
+
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{enumitem}
+
+\providecommand{\tightlist}{%
+	\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\begin{document}
+% Betreff
+
+\begin{letter}{
+		$to.name$\\
+		$to.address.street$\\
+		$to.address.code$
+		$to.address.place$
+}
+\setkomavar{subject}{$subject$}
+\opening{$opening$}
+$body$
+\closing{$closing$}
+
+\encl{$for(enclosings)$$enclosings$$sep$\\$endfor$}
+\end{letter}
+\end{document}
